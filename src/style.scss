@@ -1,0 +1,77 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@400;900&display=swap');
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+/*                                                                            
+                      SETTINGS AND VARIABLES
+*/
+
+:root {
+  //COLORS (rgb values)
+  --screen-glow: 84, 230, 175;
+  --white: 255, 255, 255;
+  --bunting: 44, 52, 75;
+  --river-styx: 18, 23, 37; //121725
+  --allegiance: 90, 102, 138; //5A668A
+  --periwinkle-grey: 194, 203, 229; //C2CBE5 
+
+  //FONTS 
+  font-size: calc(15px + 0.390625vw);
+  --chivo-family: 'Chivo', sans-serif;
+  --bold-weight: 900;
+  --light-weight: 400;
+  
+  --font-sm: 1rem;
+  --font-md: 1.56rem;
+  --font-lg: 2.89rem;
+  --font-xl: 3.44rem;
+}
