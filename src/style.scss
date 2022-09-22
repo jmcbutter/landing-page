@@ -74,6 +74,7 @@ table {
   --light-weight: 400;
   --lighter-weight: 300;
   
+  --font-xs: 0.75rem;
   --font-sm: 1rem;
   --font-md: 1.56rem;
   --font-lg: 2.89rem;
@@ -181,6 +182,16 @@ body {
     font-weight: var(--bold-weight);
     color: rgba(var(--river-styx), 1);
     cursor: pointer;
+  }
+
+  &:invalid::after {
+    content: "Oops! Please check your email";
+    color: #FB3E3E;
+    font-size: var(--font-xs);
+    margin-left: 2rem;
+    margin-top: 0.5rem;
+    display: block;
+    font-weight: var(--bold-weight);
   }
 }
 
