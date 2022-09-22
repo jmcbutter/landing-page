@@ -2,7 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-@import url("https://fonts.googleapis.com/css2?family=Chivo:wght@400;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Chivo:wght@300;400;900&display=swap");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -53,24 +53,136 @@ table {
   border-spacing: 0;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 /*                                                                            
                       SETTINGS AND VARIABLES
 */
 :root {
   --screen-glow: 84, 230, 175;
-  --white: 255, 255, 255;
   --bunting: 44, 52, 75;
   --river-styx: 18, 23, 37;
+  --white: 255, 255, 255;
   --allegiance: 90, 102, 138;
   --periwinkle-grey: 194, 203, 229;
-  font-size: calc(15px + 0.390625vw);
   --chivo-family: "Chivo", sans-serif;
   --bold-weight: 900;
   --light-weight: 400;
+  --lighter-weight: 300;
   --font-sm: 1rem;
   --font-md: 1.56rem;
   --font-lg: 2.89rem;
   --font-xl: 3.44rem;
+}
+
+body {
+  background-color: rgba(var(--river-styx), 1);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-family: var(--chivo-family);
+  color: rgba(var(--periwinkle-grey));
+  font-weight: lighter;
+  line-height: 1.25;
+}
+
+.window {
+  width: min(100%, 1440px);
+  height: min(100%, 900px);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 165px;
+}
+
+.content {
+  width: min(100%, 1275px);
+  height: min(100%, 640px);
+  position: relative;
+}
+
+.cta {
+  background-color: rgba(var(--river-styx), 1);
+  position: absolute;
+  bottom: 0;
+  width: min(100%, 723px);
+  height: min(100%, 509px);
+}
+
+.headings {
+  padding-top: 88px;
+}
+
+.heading {
+  text-transform: uppercase;
+  color: rgba(var(--screen-glow), 1);
+  font-size: var(--font-xl);
+  font-weight: var(--lighter-weight);
+}
+.heading--white {
+  color: rgba(var(--white), 1);
+  margin-bottom: 24px;
+}
+
+.text {
+  width: 40ch;
+}
+
+.landing-image {
+  position: absolute;
+  right: 0;
+  z-index: -1;
+}
+
+.dots-image {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transform: translateY(50%);
+}
+
+.email {
+  margin-top: 40px;
+  margin-bottom: 64px;
+  position: relative;
+  width: 427px;
+  height: 56px;
+}
+.email__input {
+  background-color: rgba(var(--bunting), 1);
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 2rem;
+  color: white;
+  padding-left: 32px;
+  font-weight: bold;
+}
+.email__button {
+  position: absolute;
+  top: 0.2rem;
+  right: 0.2rem;
+  bottom: 0.2rem;
+  width: 162px;
+  background-color: rgba(var(--screen-glow), 1);
+  border-radius: 2rem;
+  border: none;
+  font-weight: var(--bold-weight);
+  color: rgba(var(--river-styx), 1);
+  cursor: pointer;
+}
+
+.logos {
+  display: flex;
+  width: 536px;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /*# sourceMappingURL=style.css.map */
