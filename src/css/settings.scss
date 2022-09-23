@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@300;400;500;900&display=swap');
+
+:root {
+  //COLORS (rgb values)
+  --screen-glow: 84, 230, 175;
+  --bunting: 44, 52, 75;
+  --river-styx: 18, 23, 37;
+  --white: 255, 255, 255;
+  --allegiance: 90, 102, 138;
+  --periwinkle-grey: 194, 203, 229;
+  --color-invalid: 251, 62, 62;
+
+  //FONTS
+  --chivo-family: 'Chivo', sans-serif;
+  --bold-weight: 900;
+  --normal-weight: 500;
+  --light-weight: 400;
+  --lighter-weight: 300;
+  
+  --font-xs: 0.75rem;
+  --font-sm: 1rem;
+  --font-md: 1.56rem;
+  --font-lg: 2.89rem;
+  --font-xl: 3.44rem;
+}

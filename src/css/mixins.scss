@@ -1,0 +1,3 @@
+@mixin set-color($property, $color-name, $alpha) {
+  #{$property}: rgba(var(--#{$color-name}), $alpha);
+}

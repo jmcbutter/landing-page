@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" 
+        href="./assets/favicon-32x32.png">
   <link rel="stylesheet" href="./style.css">
   <script src="../src/index.js" defer></script>
   <title>Frontend Mentor | Pod request access landing page</title>
@@ -22,13 +23,18 @@
         </div>
         
         <p class="text">
-          Upload your audio to Pod with a single click. We'll then distribute your 
-          podcast to Spotify, Apple Podcasts, Google Podcasts, Pocket Casts and more!
+          Upload your audio to Pod with a single click. We'll then distribute 
+          your podcast to Spotify, Apple Podcasts, Google Podcasts, Pocket Casts 
+          and more!
         </p>
       
-        <form class="email email-error">
-          <input class="email__input" placeholder="Email address" type="email">
+        <form class="email email-error" action="" method="post">
+          <input id="email" class="email__input" placeholder="Email address" 
+          aria-label="Email address" pattern=".*@.*\..*"
+                 type="email" required aria-describedby="email-label">
           <button class="email__button">Request access</button>
+          <label id="email-label" class="email__label" for="email">
+            Oops! Please check your email</label>
         </form>
 
         <div class="logos">

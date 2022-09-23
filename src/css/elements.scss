@@ -1,0 +1,32 @@
+@use "./mixins.scss" as *;
+
+body {
+  @include set-color(background-color, river-styx, 1);
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  height: 100vh;
+  
+  // font-size: 18px;
+  font-size: calc(0.875em + 0.28vw);
+  font-family: var(--chivo-family);
+  font-weight: lighter;
+  line-height: 1.25;
+  
+  color: rgba(var(--periwinkle-grey));
+}
+
+main {
+  position: relative;
+  padding-left: 165px;
+  
+  width: min(100%, 1440px);
+  height: min(100%, 900px);
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}

@@ -1,8 +1,7 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
+@import url("https://fonts.googleapis.com/css2?family=Chivo:wght@300;400;500;900&display=swap"); /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
-@import url("https://fonts.googleapis.com/css2?family=Chivo:wght@300;400;900&display=swap");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -57,9 +56,6 @@ table {
   box-sizing: border-box;
 }
 
-/*                                                                            
-                      SETTINGS AND VARIABLES
-*/
 :root {
   --screen-glow: 84, 230, 175;
   --bunting: 44, 52, 75;
@@ -67,8 +63,10 @@ table {
   --white: 255, 255, 255;
   --allegiance: 90, 102, 138;
   --periwinkle-grey: 194, 203, 229;
+  --color-invalid: 251, 62, 62;
   --chivo-family: "Chivo", sans-serif;
   --bold-weight: 900;
+  --normal-weight: 500;
   --light-weight: 400;
   --lighter-weight: 300;
   --font-xs: 0.75rem;
@@ -80,15 +78,26 @@ table {
 
 body {
   background-color: rgba(var(--river-styx), 1);
-  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
+  height: 100vh;
+  font-size: calc(0.875em + 0.28vw);
   font-family: var(--chivo-family);
-  color: rgba(var(--periwinkle-grey));
   font-weight: lighter;
   line-height: 1.25;
+  color: rgba(var(--periwinkle-grey));
+}
+
+main {
+  position: relative;
+  padding-left: 165px;
+  width: min(100%, 1440px);
+  height: min(100%, 900px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .window {
@@ -121,13 +130,13 @@ body {
 }
 
 .heading {
-  text-transform: uppercase;
   color: rgba(var(--screen-glow), 1);
+  text-transform: uppercase;
   font-size: var(--font-xl);
   font-weight: var(--lighter-weight);
 }
 .heading--white {
-  color: rgba(var(--white), 1);
+  color: rgba(var(----white), 1);
   margin-bottom: 24px;
 }
 
@@ -165,27 +174,46 @@ body {
   padding-left: 32px;
   font-weight: bold;
 }
+.email__input:not(:placeholder-shown) {
+  border-width: 1px;
+  border-style: solid;
+  outline: none;
+}
+.email__input:invalid:not(:placeholder-shown) {
+  border-color: rgba(var(--color-invalid), 1);
+  background-color: rgba(var(--color-invalid), 0.1);
+  transition: background-color 350ms cubic-bezier(1, 0, 0, 1);
+}
+.email__input:invalid:not(:placeholder-shown) ~ .email__label {
+  display: block;
+}
+.email__input:invalid:focus {
+  border-color: rgba(var(--color-invalid), 1);
+  background-color: transparent;
+}
+.email__input:valid {
+  border-color: rgba(var(--screen-glow), 1);
+}
+.email__label {
+  color: rgba(var(--color-invalid), 1);
+  font-size: var(--font-xs);
+  margin-left: 2rem;
+  margin-top: 0.5rem;
+  display: none;
+  font-weight: var(--normal-weight);
+}
 .email__button {
+  background-color: rgba(var(--screen-glow), 1);
   position: absolute;
   top: 0.2rem;
   right: 0.2rem;
   bottom: 0.2rem;
   width: 162px;
-  background-color: rgba(var(--screen-glow), 1);
   border-radius: 2rem;
   border: none;
   font-weight: var(--bold-weight);
   color: rgba(var(--river-styx), 1);
   cursor: pointer;
-}
-.email:invalid::after {
-  content: "Oops! Please check your email";
-  color: #FB3E3E;
-  font-size: var(--font-xs);
-  margin-left: 2rem;
-  margin-top: 0.5rem;
-  display: block;
-  font-weight: var(--bold-weight);
 }
 
 .logos {
