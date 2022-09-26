@@ -94,6 +94,8 @@ main {
   position: relative;
   width: min(100%, 71em);
   height: min(100%, 36em);
+  display: flex;
+  flex-direction: column;
 }
 
 @media screen and (max-width: 1200px) {
@@ -105,12 +107,23 @@ main {
     height: max(75%, 43em);
   }
 }
+@media screen and (max-width: 670px) {
+  body {
+    padding-left: 0em;
+    align-items: flex-start;
+  }
+  main {
+    height: 100%;
+  }
+}
 .content {
   background-color: rgba(var(--river-styx), 1);
   position: absolute;
   bottom: 0;
   padding-top: 4em;
   padding-right: 2.5em;
+  display: flex;
+  flex-direction: column;
 }
 
 .heading {
@@ -134,8 +147,10 @@ main {
 
 .landing-image {
   position: absolute;
+  display: block;
   right: 0;
   height: 100%;
+  z-index: -2;
 }
 
 .dots-image {
@@ -147,6 +162,8 @@ main {
 
 .logo-image {
   transform: translateY(-50%);
+  height: 56px;
+  width: 135px;
 }
 
 .email {
@@ -213,6 +230,20 @@ main {
   justify-content: space-between;
   align-items: center;
 }
+.logos__image {
+  height: 100%;
+}
+
+.screen {
+  background-color: rgba(var(--river-styx), 0.9);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  z-index: -1;
+}
 
 @media screen and (max-width: 1200px) {
   .content {
@@ -223,6 +254,90 @@ main {
   }
   .logo-image {
     transform: translateY(50%);
+  }
+  .dots-image {
+    position: fixed;
+    left: 0;
+    transform: translateY(0);
+  }
+}
+@media screen and (max-width: 670px) {
+  .content {
+    text-align: center;
+    width: 100%;
+    position: static;
+    background-color: transparent;
+    margin-bottom: 14%;
+    padding-right: 0;
+    flex: 1;
+    justify-content: center;
+    padding-top: 0;
+  }
+  .text {
+    margin-left: auto;
+    margin-right: auto;
+    width: 35ch;
+    font-size: var(--font-sm);
+  }
+  .email {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    height: 7em;
+    width: 100%;
+    padding: 0 1.5em;
+    order: 4;
+  }
+  .email__label {
+    color: rgba(var(--color-invalid), 1);
+    font-size: var(--font-xs);
+    display: none;
+    font-weight: var(--normal-weight);
+    position: absolute;
+    margin: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 200%);
+  }
+  .email__input {
+    flex: 1;
+  }
+  .email__button {
+    position: static;
+    flex: 1;
+    width: 100%;
+  }
+  .heading {
+    font-size: var(--font-md);
+  }
+  .logo-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 9vh;
+    transform: translate(0);
+  }
+  .landing-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .dots-image {
+    display: none;
+  }
+  .logos {
+    width: 320px;
+    margin: 0 auto;
+    margin-bottom: 2.5em;
+    height: 2vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .screen {
+    display: block;
   }
 }
 

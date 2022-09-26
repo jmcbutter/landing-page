@@ -24,6 +24,9 @@ main {
 
   width: min(100%, 71em);
   height: min(100%, 36em);
+
+  display: flex;
+  flex-direction: column;
 }
 
 @media screen and (max-width:$desktop-breakpoint) {
@@ -34,5 +37,16 @@ main {
 
   main {
     height: max(75%, 43em)
+  }
+}
+
+@media screen and (max-width:$tablet-breakpoint) {
+  body {
+    padding-left: 0em;
+    align-items: flex-start;
+  }
+
+  main {
+    height: 100%;
   }
 }

@@ -10,6 +10,8 @@
   bottom: 0;
   padding-top: 4em;
   padding-right: 2.5em;
+  display: flex;
+  flex-direction: column;
 }
 
 .heading {
@@ -35,8 +37,10 @@
 
 .landing-image {
   position: absolute;
+  display: block;
   right: 0;
   height: 100%;
+  z-index: -2;
 }
 
 .dots-image {
@@ -48,6 +52,8 @@
 
 .logo-image {
   transform: translateY(-50%);
+  height: 56px;
+  width: 135px;
 }
 
 .email {
@@ -122,6 +128,21 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  &__image {
+    height: 100%;
+  }
+}
+
+.screen {
+  @include set-color(background-color, river-styx, 0.90);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  z-index: -1;
 }
 
 @media screen and (max-width: $desktop-breakpoint) {
@@ -135,5 +156,102 @@
   
   .logo-image {
     transform: translateY(50%);
+  }
+
+  .dots-image {
+    position: fixed;
+    left: 0;
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: $tablet-breakpoint) {
+  .content {
+    text-align: center;
+    width: 100%;
+    position: static;
+    background-color: transparent;
+    margin-bottom: 14%;
+    padding-right: 0;
+    flex: 1;
+    justify-content: center;
+    padding-top: 0;
+  }
+
+  .text {
+    margin-left: auto;
+    margin-right: auto;
+    width: 35ch;
+    font-size: var(--font-sm);
+  }
+
+  .email {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    height: calc(6em + 1em);
+    width: 100%;
+    padding: 0 1.5em;
+    order: 4;
+
+    &__label {
+      @include set-color(color, color-invalid, 1);
+      font-size: var(--font-xs);
+      display: none;
+      font-weight: var(--normal-weight);
+      position: absolute;
+      margin: 0;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 200%);
+    }
+  }
+
+  .email__input {
+    flex: 1;
+  }
+
+  .email__button {
+    position: static;
+    flex: 1;
+    width: 100%;
+  }
+
+  .heading {
+    font-size: var(--font-md);
+  }
+  
+  .logo-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 9vh;
+    transform: translate(0);
+  }
+
+  .landing-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .dots-image {
+    display: none;
+  }
+
+  .logos {
+    width: 320px;
+    margin: 0 auto;
+    margin-bottom: 2.5em;
+    height: 2vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .screen {
+    display: block;
   }
 }
