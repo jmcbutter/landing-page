@@ -8,8 +8,8 @@ body {
   justify-content: center;
   
   height: 100vh;
+  padding-left: 165px;
   
-  // font-size: 18px;
   font-size: calc(0.875em + 0.28vw);
   font-family: var(--chivo-family);
   font-weight: lighter;
@@ -20,13 +20,7 @@ body {
 
 main {
   position: relative;
-  padding-left: 165px;
-  
-  width: min(100%, 1440px);
-  height: min(100%, 900px);
-  
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+
+  width: min(100%, 71em);
+  height: min(100%, 36em);
 }

@@ -3,55 +3,39 @@
 @forward "./css/elements.scss";
 @use "./css/mixins.scss" as *;;
 
-
-.window {
-  width: min(100%, 1440px);
-  height: min(100%, 900px);
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding-left: 165px;
-}
-
 .content {
-  width: min(100%, 1275px);
-  height: min(100%, 640px);
-  position: relative;
-}
-
-.cta {
   @include set-color(background-color, river-styx, 1);
   position: absolute;
   bottom: 0;
-  width: min(100%, 723px);
-  height: min(100%, 509px);
-}
-
-.headings {
-  padding-top: 88px;
+  padding-top: 4em;
+  padding-right: 2.5em;
 }
 
 .heading {
-  @include set-color(color, screen-glow, 1);
   text-transform: uppercase;
   font-size: var(--font-xl);
   font-weight: var(--lighter-weight);
+  
+  &--green {
+    @include set-color(color, screen-glow, 1);
+  }
+
   &--white {
-    @include set-color(color, --white, 1);
-    margin-bottom: 24px;
+    @include set-color(color, white, 1);
+    display: block;
+    margin-bottom: 0.4em;
   }
 }
 
 .text {
   width: 40ch;
+  margin-bottom: 2em;
 }
 
 .landing-image {
   position: absolute;
   right: 0;
-  z-index: -1;
+  height: 100%;
 }
 
 .dots-image {
@@ -62,20 +46,19 @@
 }
 
 .email {
-  margin-top: 40px;
-  margin-bottom: 64px;
   position: relative;
-  width: 427px;
-  height: 56px;
+  margin-bottom: 3.5em;
+  width: 24em;
+  height: 3em;
 
   &__input {
     @include set-color(background-color, bunting, 1);
+    @include set-color(color, white, 1);
     width: 100%;
     height: 100%;
     border: none;
-    border-radius: 2rem;
-    color: white;
-    padding-left: 32px;
+    border-radius: 3em;
+    padding-left: 2.5em;
     font-weight: bold;
 
     &:not(:placeholder-shown) {
@@ -103,8 +86,6 @@
     &:valid {
       @include set-color(border-color, screen-glow, 1);
     }
-
-
   }
 
   &__label {
@@ -119,11 +100,11 @@
   &__button {
     @include set-color(background-color, screen-glow, 1);
     position: absolute;
-    top: 0.2rem;
-    right: 0.2rem;
-    bottom: 0.2rem;
-    width: 162px;
-    border-radius: 2rem;
+    top: 0.2em;
+    right: 0.2em;
+    bottom: 0.2em;
+    width: 13em;
+    border-radius: 3em;
     border: none;
     font-weight: var(--bold-weight);
     color: rgba(var(--river-styx), 1);
@@ -132,8 +113,8 @@
 }
 
 .logos {
+  width: 30em;
   display: flex;
-  width: 536px;
   justify-content: space-between;
   align-items: center;
 }
