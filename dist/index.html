@@ -12,9 +12,12 @@
 </head>
 <body>
   <main>
-    <img class="landing-image" src="./assets/desktop/image-host.jpg" alt="">
+    <picture>
+      <source srcset="./assets/tablet/image-host.jpg" media="(max-width: 1200px)">
+      <img class="landing-image" alt="" src="./assets/desktop/image-host.jpg">
+    </picture>
     <img class="dots-image" src="./assets/desktop/bg-pattern-dots.svg" alt="">
-    <img src="./assets/desktop/logo.svg" alt="Pod Logo">
+    <img class="logo-image" src="./assets/desktop/logo.svg" alt="Pod Logo">
     <div class="content">
       <h1 class="heading heading--green">Publish your podcasts
         <span class="heading--white">everywhere</span>

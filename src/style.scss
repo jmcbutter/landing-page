@@ -2,6 +2,7 @@
 @forward "./css/settings.scss";
 @forward "./css/elements.scss";
 @use "./css/mixins.scss" as *;;
+@use "./css/settings.scss" as *;
 
 .content {
   @include set-color(background-color, river-styx, 1);
@@ -43,6 +44,10 @@
   right: 0;
   bottom: 0;
   transform: translateY(50%);
+}
+
+.logo-image {
+  transform: translateY(-50%);
 }
 
 .email {
@@ -117,4 +122,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+@media screen and (max-width: $desktop-breakpoint) {
+  .content {
+    padding-right: 2em;
+  }
+
+  .heading {
+    font-size: var(--font-lg);
+  }
+  
+  .logo-image {
+    transform: translateY(50%);
+  }
 }

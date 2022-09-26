@@ -1,4 +1,5 @@
 @use "./mixins.scss" as *;
+@use "./settings.scss" as *;
 
 body {
   @include set-color(background-color, river-styx, 1);
@@ -8,7 +9,7 @@ body {
   justify-content: center;
   
   height: 100vh;
-  padding-left: 165px;
+  padding-left: 9em;
   
   font-size: calc(0.875em + 0.28vw);
   font-family: var(--chivo-family);
@@ -23,4 +24,15 @@ main {
 
   width: min(100%, 71em);
   height: min(100%, 36em);
+}
+
+@media screen and (max-width:$desktop-breakpoint) {
+  body {
+    padding-left: 2em;
+    align-items: flex-start;
+  }
+
+  main {
+    height: max(75%, 43em)
+  }
 }
