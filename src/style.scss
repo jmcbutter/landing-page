@@ -1,6 +1,8 @@
 @forward "./css/reset.scss";
 @forward "./css/settings.scss";
 @forward "./css/elements.scss";
+@forward "./css/email.scss";
+@forward "./css/images.scss";
 @use "./css/mixins.scss" as *;;
 @use "./css/settings.scss" as *;
 
@@ -31,96 +33,8 @@
 }
 
 .text {
-  width: 40ch;
+  max-width: 40ch;
   margin-bottom: 2em;
-}
-
-.landing-image {
-  position: absolute;
-  display: block;
-  right: 0;
-  height: 100%;
-  z-index: -2;
-}
-
-.dots-image {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  transform: translateY(50%);
-}
-
-.logo-image {
-  transform: translateY(-50%);
-  height: 56px;
-  width: 135px;
-}
-
-.email {
-  position: relative;
-  margin-bottom: 3.5em;
-  width: 24em;
-  height: 3em;
-
-  &__input {
-    @include set-color(background-color, bunting, 1);
-    @include set-color(color, white, 1);
-    width: 100%;
-    height: 100%;
-    border: none;
-    border-radius: 3em;
-    padding-left: 2.5em;
-    font-weight: bold;
-
-    &:not(:placeholder-shown) {
-      border-width: 1px;
-      border-style: solid;
-      outline: none;
-    }
-
-    &:invalid:not(:placeholder-shown) {
-      @include set-color(border-color, color-invalid, 1);
-      @include set-color(background-color, color-invalid, 0.1);
-
-      transition: background-color 350ms cubic-bezier(1, 0, 0, 1);
-      
-      & ~ .email__label {
-        display: block;
-      }
-    }
-
-    &:invalid:focus {
-      @include set-color(border-color, color-invalid, 1);
-      background-color: transparent;
-    }
-
-    &:valid {
-      @include set-color(border-color, screen-glow, 1);
-    }
-  }
-
-  &__label {
-    @include set-color(color, color-invalid, 1);
-    font-size: var(--font-xs);
-    margin-left: 2rem;
-    margin-top: 0.5rem;
-    display: none;
-    font-weight: var(--normal-weight);
-  }
-
-  &__button {
-    @include set-color(background-color, screen-glow, 1);
-    position: absolute;
-    top: 0.2em;
-    right: 0.2em;
-    bottom: 0.2em;
-    width: 13em;
-    border-radius: 3em;
-    border: none;
-    font-weight: var(--bold-weight);
-    color: rgba(var(--river-styx), 1);
-    cursor: pointer;
-  }
 }
 
 .logos {
@@ -153,16 +67,6 @@
   .heading {
     font-size: var(--font-lg);
   }
-  
-  .logo-image {
-    transform: translateY(50%);
-  }
-
-  .dots-image {
-    position: fixed;
-    left: 0;
-    transform: translateY(0);
-  }
 }
 
 @media screen and (max-width: $tablet-breakpoint) {
@@ -181,68 +85,17 @@
   .text {
     margin-left: auto;
     margin-right: auto;
-    width: 35ch;
     font-size: var(--font-sm);
-  }
-
-  .email {
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-    height: calc(6em + 1em);
-    width: 100%;
-    padding: 0 1.5em;
-    order: 4;
-
-    &__label {
-      @include set-color(color, color-invalid, 1);
-      font-size: var(--font-xs);
-      display: none;
-      font-weight: var(--normal-weight);
-      position: absolute;
-      margin: 0;
-      bottom: 0;
-      left: 50%;
-      transform: translate(-50%, 200%);
-    }
-  }
-
-  .email__input {
-    flex: 1;
-  }
-
-  .email__button {
-    position: static;
-    flex: 1;
-    width: 100%;
+    padding: 0 1ch;
   }
 
   .heading {
     font-size: var(--font-md);
-  }
-  
-  .logo-image {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 9vh;
-    transform: translate(0);
-  }
-
-  .landing-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .dots-image {
-    display: none;
+    padding: 0 1ch;
   }
 
   .logos {
-    width: 320px;
+    max-width: 18em;
     margin: 0 auto;
     margin-bottom: 2.5em;
     height: 2vh;

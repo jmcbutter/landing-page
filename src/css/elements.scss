@@ -1,6 +1,10 @@
 @use "./mixins.scss" as *;
 @use "./settings.scss" as *;
 
+:root {
+  font-size: calc(0.875em + 0.28vw);
+}
+
 body {
   @include set-color(background-color, river-styx, 1);
   
@@ -11,7 +15,6 @@ body {
   height: 100vh;
   padding-left: 9em;
   
-  font-size: calc(0.875em + 0.28vw);
   font-family: var(--chivo-family);
   font-weight: lighter;
   line-height: 1.25;
