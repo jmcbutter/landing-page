@@ -95,10 +95,12 @@
   }
 
   .logos {
-    max-width: 18em;
+    width: 100%;
     margin: 0 auto;
     margin-bottom: 2.5em;
-    height: 2vh;
+    height: 4vw;
+    padding: 0 2ch;
+    gap: 2vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
