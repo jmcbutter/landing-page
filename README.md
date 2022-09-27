@@ -33,7 +33,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Github Repo](https://https://github.com/jmcbutter/landing-page)
+- Solution URL: [Github Repo](https://github.com/jmcbutter/landing-page)
 - Live Site URL: [Github Pages](https://jmcbutter.github.io/landing-page/dist/index.html)
 
 ## My process
